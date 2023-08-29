@@ -1,0 +1,13 @@
+services:
+  repoSearch:
+    container_name: repoSearch
+    build:
+      context: .
+      args:
+        CONTAINER_PORT: ${CONTAINER_PORT}
+    image: reposearch:v1
+    restart: unless-stopped
+    expose:
+      - ${CONTAINER_PORT}
+    ports:
+      - ${CONTAINER_PORT}:${HOST_PORT}
