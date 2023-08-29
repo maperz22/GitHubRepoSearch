@@ -1,11 +1,10 @@
 package com.maperz.githubreposearch.service.impl;
 
-import com.maperz.githubreposearch.dto.userReposDtos.UserRepo;
-import com.maperz.githubreposearch.exceptions.GithubUserNotFoundException;
+import com.maperz.githubreposearch.dto.userRepos.UserRepo;
 import com.maperz.githubreposearch.service.UserRepoService;
+import com.maperz.githubreposearch.service.GithubService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.HttpClientErrorException;
 
 import java.util.List;
 
@@ -13,15 +12,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class UserRepoServiceImpl implements UserRepoService {
 
-    private final GithubServiceImpl githubServiceImpl;
+    private final GithubService githubService;
 
     public List<UserRepo> getUserRepos(String username) {
-            return githubServiceImpl.getRepos(username)
+            return githubService.getRepos(username)
                     .stream().map(
                             repo -> new UserRepo(
                                     repo.getName(),
                                     repo.getOwner().getLogin(),
-                                    githubServiceImpl.getBranches(
+                                    githubService.getBranches(
                                             username,
                                             repo.getName())
                             )

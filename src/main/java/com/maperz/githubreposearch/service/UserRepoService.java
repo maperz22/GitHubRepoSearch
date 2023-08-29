@@ -1,6 +1,6 @@
 package com.maperz.githubreposearch.service;
 
-import com.maperz.githubreposearch.dto.userReposDtos.UserRepo;
+import com.maperz.githubreposearch.dto.userRepos.UserRepo;
 
 import java.util.List;
 

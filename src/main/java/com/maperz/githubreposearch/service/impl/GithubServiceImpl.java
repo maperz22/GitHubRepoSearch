@@ -1,11 +1,12 @@
 package com.maperz.githubreposearch.service.impl;
 
-import com.maperz.githubreposearch.dto.githubDtos.Branch;
-import com.maperz.githubreposearch.dto.githubDtos.Repo;
-import com.maperz.githubreposearch.exceptions.GithubUserNotFoundException;
+import com.maperz.githubreposearch.dto.github.Branch;
+import com.maperz.githubreposearch.dto.github.Repo;
+import com.maperz.githubreposearch.exception.GithubUserNotFoundException;
 import com.maperz.githubreposearch.service.GithubService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -28,7 +29,7 @@ public class GithubServiceImpl implements GithubService {
                 .filter(repo -> !repo.getFork())
                 .toList();
         } catch (HttpClientErrorException e) {
-            if (e.getMessage().contains("User not Found")) {
+            if (e.getStatusCode().value() == HttpStatus.NOT_FOUND.value()) {
                 throw new GithubUserNotFoundException("User not found");
             } else {
                 throw e;

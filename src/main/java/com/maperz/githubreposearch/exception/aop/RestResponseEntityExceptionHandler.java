@@ -1,7 +1,7 @@
-package com.maperz.githubreposearch.exceptions.aop;
+package com.maperz.githubreposearch.exception.aop;
 
-import com.maperz.githubreposearch.exceptions.dto.ErrorResponse;
-import com.maperz.githubreposearch.exceptions.GithubUserNotFoundException;
+import com.maperz.githubreposearch.exception.dto.ErrorResponse;
+import com.maperz.githubreposearch.exception.GithubUserNotFoundException;
 import org.springframework.http.*;
 import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;

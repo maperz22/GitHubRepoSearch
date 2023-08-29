@@ -1,6 +1,6 @@
-package com.maperz.githubreposearch.dto.userReposDtos;
+package com.maperz.githubreposearch.dto.userRepos;
 
-import com.maperz.githubreposearch.dto.githubDtos.Branch;
+import com.maperz.githubreposearch.dto.github.Branch;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 

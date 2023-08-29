@@ -1,4 +1,4 @@
-package com.maperz.githubreposearch.exceptions.dto;
+package com.maperz.githubreposearch.exception.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

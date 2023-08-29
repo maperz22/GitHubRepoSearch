@@ -1,4 +1,4 @@
-package com.maperz.githubreposearch.dto.githubDtos;
+package com.maperz.githubreposearch.dto.github;
 
 import lombok.Data;
 

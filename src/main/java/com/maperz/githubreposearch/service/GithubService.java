@@ -1,7 +1,7 @@
 package com.maperz.githubreposearch.service;
 
-import com.maperz.githubreposearch.dto.githubDtos.Branch;
-import com.maperz.githubreposearch.dto.githubDtos.Repo;
+import com.maperz.githubreposearch.dto.github.Branch;
+import com.maperz.githubreposearch.dto.github.Repo;
 
 import java.util.List;
 

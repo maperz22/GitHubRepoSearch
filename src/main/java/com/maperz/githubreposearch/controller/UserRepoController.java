@@ -1,6 +1,6 @@
 package com.maperz.githubreposearch.controller;
 
-import com.maperz.githubreposearch.dto.userReposDtos.UserRepo;
+import com.maperz.githubreposearch.dto.userRepos.UserRepo;
 import com.maperz.githubreposearch.service.UserRepoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
