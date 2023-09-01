@@ -1,6 +1,7 @@
 package com.maperz.githubreposearch.service.impl;
 
 import com.maperz.githubreposearch.exception.GithubUserNotFoundException;
+import com.maperz.githubreposearch.service.GithubService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -19,7 +20,7 @@ class UserRepoServiceImplTest {
     @DisplayName("Should throw GithubUserNotFoundException when user does not exist")
     void getUserRepos_reciveGithubUserNotFoundException() {
         //given
-        var mockGithubService = mock(GithubServiceImpl.class);
+        var mockGithubService = mock(GithubService.class);
         when(mockGithubService.getRepos("user")).thenThrow(new GithubUserNotFoundException("12345"));
 
         var toTest = new UserRepoServiceImpl(mockGithubService);

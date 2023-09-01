@@ -18,11 +18,11 @@ public class UserRepoServiceImpl implements UserRepoService {
             return githubService.getRepos(username)
                     .stream().map(
                             repo -> new UserRepo(
-                                    repo.getName(),
-                                    repo.getOwner().getLogin(),
+                                    repo.name(),
+                                    repo.owner().login(),
                                     githubService.getBranches(
                                             username,
-                                            repo.getName())
+                                            repo.name())
                             )
                     ).toList();
 

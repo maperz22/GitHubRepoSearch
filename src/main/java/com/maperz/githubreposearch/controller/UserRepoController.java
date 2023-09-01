@@ -18,8 +18,8 @@ public class UserRepoController {
 
     @GetMapping(value = "/{username}/repos",
             produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List<UserRepo>> getUserRepo(@PathVariable String username) {
-        return ResponseEntity.ok(userRepoService.getUserRepos(username));
+    public List<UserRepo> getUserRepo(@PathVariable String username) {
+        return userRepoService.getUserRepos(username);
     }
 
 }
